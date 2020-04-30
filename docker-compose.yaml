@@ -1,0 +1,32 @@
+version: "3.3"
+
+services:
+    ansible-machine:
+      build:
+        context: .
+        dockerfile: ./ubuntu_ansible.dockerFile
+      networks:
+        - sshtest
+      ports:
+        - 22:22 
+    
+    remote-machine1:
+      build:
+        context: .
+        dockerfile: ./ubuntu_remote.dockerFile
+      networks:
+        - sshtest
+      ports:
+        - 22:22
+
+    remote-machine2:
+      build:
+        context: .
+        dockerfile: ./ubuntu_remote.dockerFile
+      networks:
+        - sshtest
+      ports:
+        - 22:22        
+
+networks:
+   sshtest:     

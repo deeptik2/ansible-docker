@@ -1,0 +1,10 @@
+# Consolidation of all groups
+[hosts:children]
+webserver
+database
+
+[webserver]
+remote-machine1 ansible_user=root ansible_ssh_pass=u2password
+
+[database]
+remote-machine2 ansible_user=root ansible_ssh_pass=u2password
