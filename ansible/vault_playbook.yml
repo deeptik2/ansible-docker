@@ -1,0 +1,9 @@
+---
+
+- name: To test Ansible Vault
+  hosts: all
+  tasks:
+  - name: Clone a Repo
+    git:
+      repo: https://$USERNAME:$PASSWORD@github.com/deeptik2/vaulty.git
+      dest: /opt/tests
